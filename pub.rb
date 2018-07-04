@@ -34,4 +34,14 @@ class Pub
     return @euan.age
   end
 
+  def check_drunkenness()
+    return @euan.drunkenness
+  end
+
+  def get_barred(person)
+    if person.to_i >= 10
+      return "You're barred!"
+  end
+end
+
 end

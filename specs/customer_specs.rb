@@ -32,4 +32,10 @@ def test_drunkenness_level
   assert_equal(0, @customer.drunkenness)
 end
 
+def add_to_drunkenness
+  @customer.add_to_drunkenness(@drink1.alcohol_level)
+  actual=@customer.drunkenness
+  assert_equal(4, actual)
+end
+
 end #end of class

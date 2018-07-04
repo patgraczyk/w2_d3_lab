@@ -2,7 +2,7 @@ require_relative('pub.rb')
 
 class Customer
 
-attr_reader :name, :wallet, :age, :drunkenness 
+attr_reader :name, :wallet, :age, :drunkenness
 
 def initialize (name, wallet, age, drunkenness)
   @name = name
@@ -15,4 +15,7 @@ def customer_loses_money(price)
   return @wallet -= price
 end
 
+def add_to_drunkenness(alcohol_level)
+  return @drunkenness += @drink1.alcohol_level
+end
 end

@@ -6,12 +6,12 @@ class PubTest < MiniTest::Test
 
   def setup
     @pub = Pub.new("Loading Bar", 100)
-    @drink1 = Drink.new("cider", 3)
-    @drink2 = Drink.new("wine", 5)
-    @drink3 = Drink.new("rum & coke", 4)
-    @drink4 = Drink.new("gin & tonic", 6)
+    @drink1 = Drink.new("cider", 3, 4)
+    @drink2 = Drink.new("wine", 5, 1)
+    @drink3 = Drink.new("rum & coke", 4, 3)
+    @drink4 = Drink.new("gin & tonic", 6, 2)
     @shelf = [@drink1, @drink2, @drink3, @drink4]
-    @euan = Customer.new("Euan", 100, 28)
+    @euan = Customer.new("Euan", 100, 28, 10)
   end
 
   def test_name_pub
@@ -48,6 +48,16 @@ class PubTest < MiniTest::Test
   def test_check_customer_age
     actual = @euan.age
     assert_equal(28, actual)
+  end
+
+  def test_check_drunkenness
+    actual = @euan.drunkenness
+    assert_equal(10, actual)
+  end
+
+  def test_get_barred
+    actual = @pub.get_barred(@euan.drunkenness)
+    assert_equal("You're barred!", actual)
   end
 
 
