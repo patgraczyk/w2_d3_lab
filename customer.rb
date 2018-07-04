@@ -1,4 +1,5 @@
 require_relative('pub.rb')
+require_relative('food.rb')
 
 class Customer
 
