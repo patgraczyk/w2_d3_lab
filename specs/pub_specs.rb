@@ -38,5 +38,10 @@ class PubTest < MiniTest::Test
     assert_equal(0, actual)
   end
 
+  def test_add_money_to_pub
+    @pub.add_money_to_pub(@drink1.price)
+    actual=@pub.till
+    assert_equal(3, actual)
+  end
 
 end #end of class

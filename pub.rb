@@ -24,4 +24,9 @@ class Pub
   def sell_drink()
     return @drinks.pop()
   end
+
+  def add_money_to_pub(new_drink_price)
+    return @till += new_drink_price
+  end
+
 end
