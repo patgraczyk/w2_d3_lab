@@ -11,6 +11,7 @@ class PubTest < MiniTest::Test
     @drink3 = Drink.new("rum & coke", 4)
     @drink4 = Drink.new("gin & tonic", 6)
     @shelf = [@drink1, @drink2, @drink3, @drink4]
+    @euan = Customer.new("Euan", 100, 28)
   end
 
   def test_name_pub
@@ -43,5 +44,11 @@ class PubTest < MiniTest::Test
     actual=@pub.till
     assert_equal(3, actual)
   end
+  #
+  def test_check_customer_age
+    actual = @euan.age
+    assert_equal(28, actual)
+  end
+
 
 end #end of class

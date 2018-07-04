@@ -1,4 +1,5 @@
 require_relative('drink.rb')
+require_relative('customer.rb')
 
 class Pub
 
@@ -17,7 +18,7 @@ class Pub
   def add_drink_in_bar (new_drink)
     return @drinks << new_drink
   end
-  #
+
   # def add_all_drinks (all_drinks)
   #   return @drinks << all_drinks
   # end
@@ -27,6 +28,10 @@ class Pub
 
   def add_money_to_pub(new_drink_price)
     return @till += new_drink_price
+  end
+  #
+  def check_customer_age()
+    return @euan.age
   end
 
 end
