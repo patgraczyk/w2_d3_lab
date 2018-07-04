@@ -41,7 +41,7 @@ def test_add_to_drunkenness
   assert_equal(4, actual)
 end
 
-def test_reduce_drunkenness 
+def test_reduce_drunkenness
   @customer.reduce_drunkenness(@drink1.alcohol_level, @food.rejuvanation_level)
   actual=@customer.drunkenness
   assert_equal(2, actual)

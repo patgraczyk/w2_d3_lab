@@ -10,8 +10,20 @@ class PubTest < MiniTest::Test
     @drink2 = Drink.new("wine", 5, 1)
     @drink3 = Drink.new("rum & coke", 4, 3)
     @drink4 = Drink.new("gin & tonic", 6, 2)
-    @shelf = [@drink1, @drink2, @drink3, @drink4]
-    @euan = Customer.new("Euan", 100, 28, 10, 0)
+    # @stock = [@drink1, @drink2, @drink3, @drink4]
+    @stock = [
+      @drink1 = {
+        name: "cider",
+        price: 3,
+        alcohol_level: 4
+      },
+      @drink2 = {
+        name: "wine",
+        price: 5,
+        alcohol_level: 1
+      }
+    ]
+    @euan = Customer.new("Euan", 100, 28, 10)
   end
 
   def test_name_pub
