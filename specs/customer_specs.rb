@@ -8,7 +8,7 @@ class CustomerTest < MiniTest::Test
 
 def setup
   @drink1 = Drink.new("cider", 3, 4)
-  @customer = Customer.new("Euan", 100, 28, 0, 0)
+  @customer = Customer.new("Euan", 100, 28, 0)
   @food = Food.new("nachos", 6, 2)
 end
 
@@ -42,7 +42,9 @@ def test_add_to_drunkenness
 end
 
 def test_reduce_drunkenness
-  
+  @customer.reduce_drunkenness(@food.rejuvanation_level)
+  actual=@customer.drunkenness
+  assert_equal(-2, actual)
 end
 
 

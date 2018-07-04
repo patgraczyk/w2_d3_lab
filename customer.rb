@@ -4,14 +4,13 @@ require_relative('drink.rb')
 
 class Customer
 
-attr_reader :name, :wallet, :age, :drunkenness, :rejuvanation
+attr_reader :name, :wallet, :age, :drunkenness
 
-def initialize (name, wallet, age, drunkenness, rejuvanation)
+def initialize (name, wallet, age, drunkenness)
   @name = name
   @wallet = 100
   @age = 28
   @drunkenness = drunkenness
-  @rejuvanation = rejuvanation
 end
 
 def customer_loses_money(price)
@@ -22,5 +21,8 @@ def add_to_drunkenness(alcohol_level)
   return @drunkenness += alcohol_level
 end
 
+def reduce_drunkenness(rejuvanation_level)
+  return @drunkenness -= rejuvanation_level
+end
 
 end
