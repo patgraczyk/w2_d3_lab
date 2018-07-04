@@ -11,7 +11,7 @@ class PubTest < MiniTest::Test
     @drink3 = Drink.new("rum & coke", 4, 3)
     @drink4 = Drink.new("gin & tonic", 6, 2)
     @shelf = [@drink1, @drink2, @drink3, @drink4]
-    @euan = Customer.new("Euan", 100, 28, 10)
+    @euan = Customer.new("Euan", 100, 28, 10, 0)
   end
 
   def test_name_pub

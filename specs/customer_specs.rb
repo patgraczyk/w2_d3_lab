@@ -1,12 +1,15 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../customer.rb')
+require_relative('../drink.rb')
+
 
 class CustomerTest < MiniTest::Test
 
 def setup
   @drink1 = Drink.new("cider", 3, 4)
-  @customer = Customer.new("Euan", 100, 28, 0)
+  @customer = Customer.new("Euan", 100, 28, 0, 0)
+  @food = Food.new("nachos", 6, 2)
 end
 
 def test_customer_name
@@ -32,10 +35,16 @@ def test_drunkenness_level
   assert_equal(0, @customer.drunkenness)
 end
 
-def add_to_drunkenness
+def test_add_to_drunkenness
   @customer.add_to_drunkenness(@drink1.alcohol_level)
   actual=@customer.drunkenness
   assert_equal(4, actual)
 end
+
+def test_reduce_drunkenness
+  
+end
+
+
 
 end #end of class
