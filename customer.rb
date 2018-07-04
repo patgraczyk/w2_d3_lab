@@ -21,8 +21,8 @@ def add_to_drunkenness(alcohol_level)
   return @drunkenness += alcohol_level
 end
 
-def reduce_drunkenness(rejuvanation_level)
-  return @drunkenness -= rejuvanation_level
+def reduce_drunkenness(alcohol_level, rejuvanation_level)
+  return @drunkenness = alcohol_level -= rejuvanation_level
 end
 
 end
